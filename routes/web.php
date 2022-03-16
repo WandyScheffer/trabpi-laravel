@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,31 +15,55 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/list', function () {
+    return view('task.list');
 });
 
-Route::get('/teste1', function () {
-    // return view('welcome');
-    return "rota de reste inicial";
+Route::get('/insert', function () {
+    return view('task.add');
 });
 
-Route::get('/teste2', function () {
-    // return view('welcome');
-    return "rota que recebe redirecionamento";
-})->name('recebe');
+// Route::post('/insert', function () {
+//     return view('');
+// });
 
-Route::get('/teste3', function () {
-    // return view('welcome');
-    return redirect()->route('recebe');
+Route::get('/edit', function () {
+    return view('task.update');
 });
 
-Route::get('/teste4/{id}', function ($id) {
-    // return view('welcome');
-    return "o valor de id é {$id}";
+Route::get('/remove', function () {
+    return view('task.remove');
 });
 
-Route::get('/teste5', function () {
-    // return view('welcome');
-    return "teste de query: " . $algo;
+Route::get('/login', function () {
+    return view('access.login');
 });
+
+Route::get('/register', function () {
+    return view('access.create');
+});
+
+
+// Route::get('/teste1', function () {
+//     // return view('welcome');
+//     return "rota de reste inicial";
+// });
+
+// Route::get('/teste2', function () {
+//     // return view('welcome');
+//     return "rota que recebe redirecionamento";
+// })->name('recebe');
+
+// Route::get('/teste3', function () {
+//     // return view('welcome');
+//     return redirect()->route('recebe');
+// });
+
+// Route::get('/teste4/{id}', function ($id) {
+    // return view('welcome');
+    // return "o valor de id é {$id}";
+// });
+
+
