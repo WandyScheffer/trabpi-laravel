@@ -1,3 +1,18 @@
-/* .title {
+.listContent {
+  width: 96vw;
+  margin: auto;
+}
+
+.priorityText {
+  font-weight: bold;
+}
+
+.highPriority {
   color: red;
-} */
+}
+.mediumPriority {
+  color: orange;
+}
+.lowPriority {
+  color: green;
+}
