@@ -1,4 +1,4 @@
-@extends('template.base')
+@extends('layouts.app')
 
 @push('styles')
   <link href="{{ asset('css/access/login.css') }}" rel="stylesheet">
